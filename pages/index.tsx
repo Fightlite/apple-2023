@@ -1,12 +1,10 @@
 import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { Header, Landing } from '../components'
+import { Header, Landing, Product, Basket, Footer } from '../components'
 import { Tab } from '@headlessui/react'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
 import { getSession } from 'next-auth/react'
-import Product from '../components/Product'
-import Basket from '../components/Basket'
 import type { Session } from 'next-auth'
 
 interface Props {
@@ -67,6 +65,8 @@ const Home = ({ categories, products }: Props) => {
           </Tab.Group>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }
